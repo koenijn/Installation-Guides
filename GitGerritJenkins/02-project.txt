@@ -1,0 +1,28 @@
+# generate SSH keys on local dev machine:
+
+ssh-keygen -t rsa
+
+# copy output of:
+
+cat .ssh/id_rsa.pub
+
+# register login on Gerrit and use output of previous command as Public SSH key
+
+# register the username you will be using for SSH in your profile in gerrit
+
+# create project from the client:
+
+ssh -p 29418 localhost gerrit create-project --name myTestProject
+
+# Accept SSL fingerprint
+
+# Clone project
+
+git clone ssh://koenijn@localhost:29418/myTestProject myTestProject
+
+# just make some alterations and push them to:
+
+git push origin HEAD:refs/for/master
+
+
+

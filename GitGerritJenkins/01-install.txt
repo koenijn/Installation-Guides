@@ -1,0 +1,46 @@
+# download Gerrit:
+
+http://code.google.com/p/gerrit/downloads/list
+
+# create gerrit home directory:
+
+cd /opt
+mkdir gerrit-home
+
+# initialize Gerrit
+
+java -jar gerrit-2.2.2.1.war init -d /opt/gerrit-home
+
+Create '/Users/mark/development/qa/gerrit/gerrit-home' [Y/n]? 
+
+Location of Git repositories   [git]: git
+
+Database server type           [H2/?]: H2
+
+Authentication method          [OPENID/?]: HTTP
+Get username from custom HTTP header [y/N]? N
+SSO logout URL                 : 
+
+SMTP server hostname           [localhost]: localhost
+SMTP server port               [(default)]: 25
+SMTP encryption                [NONE/?]: NONE
+SMTP username                  : koenijn
+koenijn's password             : 
+              confirm password : 
+
+Run as                         [koenijn]: koenijn
+Java runtime                   [/System/Library/Java/JavaVirtualMachines/1.6.0.jdk/Contents/Home]: 
+Copy gerrit.war to /opt/gerrit-home/bin/gerrit.war [Y/n]? Y
+Copying gerrit.war to /opt/gerrit-home/bin/gerrit.war
+
+Listen on address              [*]: 
+Listen on port                 [29418]: 
+
+Download and install it now [Y/n]? Y
+
+Behind reverse proxy           [y/N]? N
+Use SSL (https://)             [y/N]? N
+Listen on address              [*]: 
+Listen on port                 [8080]: 8080
+
+# after answering the questions the browser should open and show Gerrit
